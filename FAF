@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fat arrow function in javascript</title>
+</head>
+<body>
+    <script>
+        class Student{
+            constructor(name,age,marks){
+                this.name=name;
+                this.age=age;
+                this.marks=marks;
+            }
+            setPlacementAge(minPlacementAge){
+                console.log(this);
+                return (minMarks)=>{
+                    console.log('inside eligibaleforCurrentCompany',this)
+                    if(this.marks>minMarks&&this.age>minPlacementAge){
+                        console.log(this.name+" ready for placement")
+                    }
+                    else{
+                        console.log(this.name+"is not ready for placement")
+                    }
+                }
+            }
+        }
+        const sanskar=new Student('sanskar',28,70);
+        const rakesh=new Student('rakesh',22,90)
+        sanskar.setPlacementAge(23)(30);      
+    </script>
+</body>
+</html>
